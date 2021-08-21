@@ -1,34 +1,11 @@
 # JavaScript Algorithms and Data Structures
 
-[![CI](https://github.com/trekhleb/javascript-algorithms/workflows/CI/badge.svg)](https://github.com/trekhleb/javascript-algorithms/actions?query=workflow%3ACI+branch%3Amaster)
-[![codecov](https://codecov.io/gh/trekhleb/javascript-algorithms/branch/master/graph/badge.svg)](https://codecov.io/gh/trekhleb/javascript-algorithms)
-
 This repository contains JavaScript based examples of many
 popular algorithms and data structures.
 
 Each algorithm and data structure has its own separate README
 with related explanations and links for further reading (including ones
 to YouTube videos).
-
-_Read this in other languages:_
-[_简体中文_](README.zh-CN.md),
-[_繁體中文_](README.zh-TW.md),
-[_한국어_](README.ko-KR.md),
-[_日本語_](README.ja-JP.md),
-[_Polski_](README.pl-PL.md),
-[_Français_](README.fr-FR.md),
-[_Español_](README.es-ES.md),
-[_Português_](README.pt-BR.md),
-[_Русский_](README.ru-RU.md),
-[_Türk_](README.tr-TR.md),
-[_Italiana_](README.it-IT.md),
-[_Bahasa Indonesia_](README.id-ID.md),
-[_Українська_](README.uk-UA.md),
-[_Arabic_](README.ar-AR.md),
-[_Deutsch_](README.de-DE.md)
-
-*☝ Note that this project is meant to be used for learning and researching purposes
-only, and it is **not** meant to be used for production.*
 
 ## Data Structures
 
@@ -229,120 +206,4 @@ different path of finding a solution. Normally the DFS traversal of state-space 
   * `A` [N-Queens Problem](src/algorithms/uncategorized/n-queens)
   * `A` [Knight's Tour](src/algorithms/uncategorized/knight-tour)
   * `A` [Combination Sum](src/algorithms/sets/combination-sum) - find all combinations that form specific sum
-* **Branch & Bound** - remember the lowest-cost solution found at each stage of the backtracking
-search, and use the cost of the lowest-cost solution found so far as a lower bound on the cost of
-a least-cost solution to the problem, in order to discard partial solutions with costs larger than the
-lowest-cost solution found so far. Normally BFS traversal in combination with DFS traversal of state-space
-tree is being used.
 
-## How to use this repository
-
-**Install all dependencies**
-
-```
-npm install
-```
-
-**Run ESLint**
-
-You may want to run it to check code quality.
-
-```
-npm run lint
-```
-
-**Run all tests**
-
-```
-npm test
-```
-
-**Run tests by name**
-
-```
-npm test -- 'LinkedList'
-```
-
-**Troubleshooting**
-
-In case if linting or testing is failing try to delete the `node_modules` folder and re-install npm packages:
-
-```
-rm -rf ./node_modules
-npm i
-```
-
-**Playground**
-
-You may play with data-structures and algorithms in `./src/playground/playground.js` file and write
-tests for it in `./src/playground/__test__/playground.test.js`.
-
-Then just simply run the following command to test if your playground code works as expected:
-
-```
-npm test -- 'playground'
-```
-
-## Useful Information
-
-### References
-
-[▶ Data Structures and Algorithms on YouTube](https://www.youtube.com/playlist?list=PLLXdhg_r2hKA7DPDsunoDZ-Z769jWn4R8)
-
-### Big O Notation
-
-*Big O notation* is used to classify algorithms according to how their running time or space requirements grow as the input size grows.
-On the chart below you may find most common orders of growth of algorithms specified in Big O notation.
-
-![Big O graphs](./assets/big-o-graph.png)
-
-Source: [Big O Cheat Sheet](http://bigocheatsheet.com/).
-
-Below is the list of some of the most used Big O notations and their performance comparisons against different sizes of the input data.
-
-| Big O Notation | Computations for 10 elements | Computations for 100 elements | Computations for 1000 elements  |
-| -------------- | ---------------------------- | ----------------------------- | ------------------------------- |
-| **O(1)**       | 1                            | 1                             | 1                               |
-| **O(log N)**   | 3                            | 6                             | 9                               |
-| **O(N)**       | 10                           | 100                           | 1000                            |
-| **O(N log N)** | 30                           | 600                           | 9000                            |
-| **O(N^2)**     | 100                          | 10000                         | 1000000                         |
-| **O(2^N)**     | 1024                         | 1.26e+29                      | 1.07e+301                       |
-| **O(N!)**      | 3628800                      | 9.3e+157                      | 4.02e+2567                      |
-
-### Data Structure Operations Complexity
-
-| Data Structure          | Access    | Search    | Insertion | Deletion  | Comments  |
-| ----------------------- | :-------: | :-------: | :-------: | :-------: | :-------- |
-| **Array**               | 1         | n         | n         | n         |           |
-| **Stack**               | n         | n         | 1         | 1         |           |
-| **Queue**               | n         | n         | 1         | 1         |           |
-| **Linked List**         | n         | n         | 1         | n         |           |
-| **Hash Table**          | -         | n         | n         | n         | In case of perfect hash function costs would be O(1) |
-| **Binary Search Tree**  | n         | n         | n         | n         | In case of balanced tree costs would be O(log(n)) |
-| **B-Tree**              | log(n)    | log(n)    | log(n)    | log(n)    |           |
-| **Red-Black Tree**      | log(n)    | log(n)    | log(n)    | log(n)    |           |
-| **AVL Tree**            | log(n)    | log(n)    | log(n)    | log(n)    |           |
-| **Bloom Filter**        | -         | 1         | 1         | -         | False positives are possible while searching |
-
-### Array Sorting Algorithms Complexity
-
-| Name                  | Best            | Average             | Worst               | Memory    | Stable    | Comments  |
-| --------------------- | :-------------: | :-----------------: | :-----------------: | :-------: | :-------: | :-------- |
-| **Bubble sort**       | n               | n<sup>2</sup>       | n<sup>2</sup>       | 1         | Yes       |           |
-| **Insertion sort**    | n               | n<sup>2</sup>       | n<sup>2</sup>       | 1         | Yes       |           |
-| **Selection sort**    | n<sup>2</sup>   | n<sup>2</sup>       | n<sup>2</sup>       | 1         | No        |           |
-| **Heap sort**         | n&nbsp;log(n)   | n&nbsp;log(n)       | n&nbsp;log(n)       | 1         | No        |           |
-| **Merge sort**        | n&nbsp;log(n)   | n&nbsp;log(n)       | n&nbsp;log(n)       | n         | Yes       |           |
-| **Quick sort**        | n&nbsp;log(n)   | n&nbsp;log(n)       | n<sup>2</sup>       | log(n)    | No        | Quicksort is usually done in-place with O(log(n)) stack space |
-| **Shell sort**        | n&nbsp;log(n)   | depends on gap sequence   | n&nbsp;(log(n))<sup>2</sup>  | 1         | No         |           |
-| **Counting sort**     | n + r           | n + r               | n + r               | n + r     | Yes       | r - biggest number in array |
-| **Radix sort**        | n * k           | n * k               | n * k               | n + k     | Yes       | k - length of longest key |
-
-## Project Backers
-
-> You may support this project via ❤️️ [GitHub](https://github.com/sponsors/trekhleb) or ❤️️ [Patreon](https://www.patreon.com/trekhleb).
-
-[Folks who are backing this project](https://github.com/trekhleb/javascript-algorithms/blob/master/BACKERS.md) `∑ = 0`
-
-> ℹ️ A few more [projects](https://trekhleb.dev/projects/) and [articles](https://trekhleb.dev/blog/) about JavaScript and algorithms on [trekhleb.dev](https://trekhleb.dev)
